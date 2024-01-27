@@ -28,8 +28,10 @@ id=$(echo $response | jq -r '.id')
 name=$(echo $response | jq -r '.name' | awk '{print toupper(substr($0, 1, 1)) tolower(substr($0, 2))}')
 weight=$(echo $response | jq -r '.weight')
 height=$(echo $response | jq -r '.height')
+order=$(echo $response | jq -r '.order')
 
 echo "$name (No. $id)"
 echo "Id = $id"
 echo "Weight = $weight"
 echo "Height = $height"
+echo "Order = $order"
